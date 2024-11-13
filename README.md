@@ -20,20 +20,32 @@
 * `Tab` : Otamatik tamamlama sağlar. Bu durum hem dosya/dizin hem de komutlar için geçerlidir
 * `Ctrl + R` : Daha önce kullanılan komutlar arasında arama ve yeniden o komutu kullanma gibi işlemleri yapmanızı sağlar
 
-## Birden Çok Konsal Açma
+## Birden Çok Konsol Açma
 Linux sisteminde aynı anda birbirinden bağımsız oturumlarda çok sayıda konsol açıp bu konsollarda çalışabilir, eş zamanlı olarak __6__ ayrı konsol açıp hepsinde ayrı ayrı işlemler yapabilirsiniz. X oturumundan (grafiksel kullanıcı oturumu da denebilir) konsola geçiş yapmak için `<Ctrl + Alt><Fn>` __(n=1,...6)__ tuşları kullanılır. X oturumuna geri dönmek için de `Ctrl + Alt + F7` tuşları kullanılır. Evet F1-F6 arası tuşlarla 6 tane __sanal terminal__ açabiliyoruz. Eğer sistemde kullanılıyorsa `<Ctrl + Alt><Fn>` __(n=7,...12)__ ile de X sunucuları arasında geçiş yapılabilir
 
 
 ## Komut Satırında Aynı Anda Birden Fazla Komut Kullanımı
 Terminalde/konsolda aynı anda birden fazla komut kullanabilirsiniz. Bunun için kullanacağınız komutları __noktalı virgül__ ile ayırmanız yeterlidir. Örneğin `ls;ls /etc` komutunun çıktısı aşağıdaki gibi olucaktır
 
+```shell
+ls;ls /etc
+```
+
 ![linux_logo](Images/manyCode.png)
 
 Terminalde birden fazla komut çalıştırmak && operatörü de kullanılabilir. Bu operatör sistem güncelleme sırasında çok kullanılır Örneğin `apt-get update && apt-get upgrade` komutu verildiğinde sırasıyla komutlar çalıştırılarak sistem güncellenecektir. Şimdi bir örnek yapalım ve `ls && cd /etc` komutunun ciktisina bakalim
 
+```shell
+ls && cd /etc
+```
+
 ![linux_logo](Images/manyopCodeAnd.png)
 
 Bir diğer operatörümüzde `||` operatörümüzdür Terminalde iki komut kullanırken komutlar arasında bu operatörü koyarsak birinci komut başarısız olursa diğer komutu çalıştırmasını istediğimizi söylemiş oluruz. Örnek olarak `abc || cd /home` komutunu deneyelim 
+
+```shell
+abc || cd /home
+```
 
 ![linux_logo](Images/manyopCodeOr.png)
 
@@ -44,6 +56,10 @@ Linux sistemlerinde çok güçlü bir yardım alma sistemi vardır. Komut satır
 
 ## `help`
 Daha sonra değineceğimiz __ls__ komutunun kullanımıyla ilgili bilgi almak için __ls --help__ komutunu kullanabilirsiniz 
+
+```shell
+ls --help
+```
 
 ![linux_logo](Images/ls--help.png)
 
@@ -65,5 +81,75 @@ Man sayfaları Linux sistemde temel yardım alma dosyalarıdır Bir man sayfası
 * `SO ALSO` : İlgili Başlıklar
 
 Kılavuz sayfaları __/usr/share/man__ altinda bulunur
+```shell
+cd /usr/share/man
+```
+
+```shell
+ls
+```
+
+![linux_logo](Images/manKa.png)
+
+## `whatis`
+Bize dolaylı yoldan yardım eden başka bir komut da __whatis__ komutudur. Bu komutu kullanarak bir uygulama ya da komutla ilgili yardımın hangi klavuz sayfalarında olduğunu öğrenebiliriz
+
+```shell
+whatis echo
+```
+![linux_logo](Images/whatis.png)
 
 
+# Bilgi Alma Komutları
+Sistemimizde bulunan dosyalarla,programlarla, süreçlerle, kullanıcılarla vs.ilgili bilgi almak için birçok komut bulunmaktadır. Bu komutların neler olduğundan bahsedeceğiz
+
+## `lsb_release`
+**Linux Dağıtımının Adını Öğrenme**</br>
+Kullandığınız Linux dağıtımın adını öğrenmek için __lsb_release -a__ komutunu kullanabiliriz
+
+```shell
+lsb_release -a
+```
+![linux_logo](Images/lsb.png)
+
+## `etc/issue`
+**Linux Adı Öğrenme** </br>
+Bu komut, kullandığınız Linux'ün adını görmek için kullanılır
+```shell
+cat /etc/issue
+```
+![linux_logo](Images/issue.png)
+
+## `uname`
+**Tam Versiyon Öğrenme** </br>
+Sisteminizin kullandığı kernel versiyonunu öğrenmek için __uname -a__ komutunu kullanabilirsiniz
+
+```shell
+uname -a
+```
+![linux_logo](Images/uname.png)
+
+|Parametre  |Açıklama |
+|-----------|---------|
+|`uname -n`  |Makinanın ağdaki adını gösterir|
+|`uname -r`|Çekirdek sürümünü gösterir.|
+|`uname -v`|Çekirdeğin yayınlanma tarihi ve saati gibi ayrıntılı sürüm bilgisini gösterir.|
+|`uname -v`|Çekirdeğin yayınlanma tarihi ve saati gibi ayrıntılı sürüm bilgisini gösterir.|
+|`uname -a`|Tüm bilgileri toplu olarak gösterir.|
+
+</br>
+
+## `cal`
+**Takvim  Görüntüleme**</br>
+Bulunduğumuz ayı sistemin bir aylık takvim olarak konsoldan göstermesi için __cal__ komutu kullanılır
+
+```shell
+cal
+```
+![linux_logo](Images/cal.png) </br>
+
+* `cal 7 2001` Komutu 2001 yılının  7. ayının takvimi verir
+```shell
+cal 7 2001
+```
+![linux_logo](Images/cal1.png) </br>
