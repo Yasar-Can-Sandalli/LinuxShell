@@ -329,3 +329,61 @@ __Kullanabileceğiniz Diğer Parametreler__
 |`ls -i`| __inode__ (düğüm) numarası ile sıralar|
 |`ls -lh`|Dosya boyutlarını daha okunaklı __(human readable)__ listeler|
 |`ls -lt`|Dosyaları üzerinde yapılan değişiklik __(modifikasyon)__ tarihine göre listeler|
+
+</br>
+</br>
+
+
+# 🗃️ Dosya İşlemleri 
+<p>Bu bölümde dosya oluşturma, kopyalama, taşıma, içeriğini görüntüleme vs. gibi konulardan bahsedeceğim. Bu kısımda çalışacağımız dosyalar genellikle <strong>text</strong> (metin) dosyaalrı olucaktır</p>
+
+## `touch`
+**Dosya Oluşturma** </br>
+Bir dosya oluşturmak için __touch__ komutu kullanılır. Örneğin `touch test.txt` komutu mevcut dizinde test adında bir txt (metin) dosyası oluşturacaktır. Burada dosayin sonuna .txt diyerek diyerek uzantsına verdik siz dilediğiniz türde dosya uzantısı vererek istenilen dosya türünü oluşturabilirsiniz </br>
+_Not: Uzantısı verilmeyen dosyalar metin dosyası olarak kabul edilir_
+
+```shell
+touch test.txt
+```
+
+![linux_logo](Images/touch.png)
+
+## `cat`
+**Dosya İçeriğini Görüntüleme** </br>
+Bir dosyanın içeriğini förüntülemek için __cat__ komutu kullanılır. Aşağıda daha önce içine `Hello World !` metni yazılmış bir metin dosyasının içeriği görüntülenmektedir
+
+```shell
+cat test.txt
+```
+![linux_logo](Images/cat.png)
+
+## `echo`
+**Dosyalara Yazma** </br>
+Bu komut dosya oluşturp içine istenilen string ifadenin yazılması için kullanılır 
+
+```shell
+echo "master of linux" > linuxshell
+```
+
+![linux_logo](Images/echo.png)
+
+## `more`
+**Dosyayi Terminalde Okuma** </br>
+Metin dosyalarını terminalden okumak için kullanılan komutlardan biride __more__ komutudur. Bu komut daha çok komut çıktısınnın uzun olduğu durumlarda çıktıyı daha rajat okuyabilmek için kullanılır.Örneğin __more /etc/passwd__ kotunu verdiğimizde, uzun olan komut çıktısı ekrana gelir ve biz __enter__ tuşuna her bastığımızda satır satır ilerler,__space__ tuşu ilede sayfa sayfa ilerler. Bir önceki sayfaya dönmek için __b__ tuşu kullanılır. Çıkmak istediğimiz zamanda __q__
+tuşuna basmamız yeterlidir
+
+```shell
+more /etc/passwd
+```
+
+![linux_logo](Images/more.png)
+
+
+## `tac`
+**Dosyayı Sondan başlayarak Yazma**
+Bir metin dosyasının içeriğini sondan başa doğru förmek için __tac__ komutu kullanılır
+
+```shell
+cat hacker && tac hacker
+```
+![linux_logo](Images/tac.png)
