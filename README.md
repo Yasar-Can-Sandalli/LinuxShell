@@ -57,3 +57,13 @@ Linux sistemde iç çeşit temel döküman ve bilgi kaynağı vardır:
 ![linux_logo](Images/manlist.png)
 
 Man sayfaları Linux sistemde temel yardım alma dosyalarıdır Bir man sayfasının genellikle şu şekildedir
+
+* `NAME` : Komutun ismi ve açıklamsı
+* `SYNOPSIS` : Komutunun nasıl kullancağı
+* `DESCRIPTION` : Komutunun fonksiyonu hakkında açıklama
+* `EXAMPLE` : Komutunun nasıl kullanılacağı ilgili örnekler
+* `SO ALSO` : İlgili Başlıklar
+
+Kılavuz sayfaları __/usr/share/man__ altinda bulunur
+
+
