@@ -1,7 +1,7 @@
-![linux_logo](Images/linuxLogo.png)
+![linux_logo](Images/linuxLogo.png) 🔌🔄
 
 # 🐧 Linux Bash Ve Komutlarına Hızlı Başlangıç🚀
-<p>Bu makale Linux işletim sisteminin temel shell komutlarını içermektedir. Dosya listeleme,Dizin değiştime,dosya işlemleri gibi  önemli kodların detaylı kullanımını anlatmaktadır</p>
+<p>Bu makale Linux işletim sisteminin temel shell komutlarını içermektedir. Dosya listeleme,Dizin değiştirme,dosya işlemleri gibi  önemli kodların detaylı kullanımını anlatmaktadır</p>
 
 
 ## Bash Sell Kısa Yollar
@@ -160,7 +160,7 @@ cal 2025
 ```
 ![linux_logo](Images/cal2025.png) </br>
 
-## `date`
+## 📅 `date`
 **Saat ve Tarih Öğrenme** </br>
 Sistemin o anki saat ve tarih bilgisi öğrenmek için __date__ komutu kullanılır
 ```shell
@@ -249,4 +249,83 @@ history
 
 </br> 
 
-# Dizin Klasörler Arasında Gezme Ve İçeriğini Listeleme
+# 🗂️ Dizin Klasörler Arasında Gezme Ve İçeriğini Listeleme ⌚
+Dizinler arasında gezmek, içeriklerini listelemek, hangi dizinde çalıştığımızı görmek için kullandığımız komutlar vardır.
+Bu kısımda size bu komutlardan bahsedeceğim
+
+## `📁 pwd`
+**Mevcut Dizin** </br>
+Hangi dizinde çalıştığımızı görmek için __pwd__ komutunu kullanırız
+
+```shell
+pwd
+```
+![linux_logo](Images/pwd.png)
+
+## `📂 cd`
+**Dizin Değiştime** </br>
+Evet anlaşılabileceği gibi __cd__ (change directory) komutu ile dizinler arasında geçiş yapabiliyoruz. Örneğin __cd user/share__ komutunu ile /share dizinine geçebiliriz.
+
+```shell
+cd
+```
+![linux_logo](Images/cd.png)
+
+* `cd /` Komutunu kullanarak herhangi bir dizinden kök (__root__) dizinine geçiş yapabilirsiniz
+
+```shell
+cd /
+```
+![linux_logo](Images/cdroot.png)
+
+* `cd ..` Bir alt dizinden üst dizine geçmek istediğinizde ise (__cd ..__) komutunu kullanabilirsiniz. Eğer iki üst dizine geçmek istersek (__cd ../../__) şeklinde n sayıda üst dizine geçmek istersek te aynı örüntüde komutu yazarak geçiş yapabilirz
+
+```shell
+cd ..
+```
+```shell
+cd ../home
+```
+![linux_logo](Images/cdBaya.png)
+
+## 🖿  `ls`
+**Alt Dizinleri Listeleme** </br>
+Dizinler altında bulunan alt dizin, klasör ve dosyaalrı listelemek içim __ls__ komutu kullanılır. Parametresiz kullanılabildiği gibi bir çok özelliğie yarayan parametreli kullanımlarıda mevcuttur
+
+```shell
+ls
+``` 
+![linux_logo](Images/ls.png)
+
+* `ls -l` -l parametresýle dosyalarin izinlerini, oluşturma tarihlerini vs. gibi  ayrıntılı bilgilerini görücek şekilde  listeleyebiliriz
+
+```shell
+ls -l
+``` 
+
+![linux_logo](Images/lsl.png)
+
+
+* `ls -la` -l -a parametreleriyle hem gizli dosyaları hemde normal dosyaları ayrıntılı bir şekilde görüntüleyebilirz
+
+```shell
+ls -la
+``` 
+![linux_logo](Images/lsla.png)
+
+* `ls -1` Ekran çıktısının alt alt alt liste şeklinde çıkmasını isterseniz __-1__ parametresini kullanabilirsiniz
+
+```shell
+ls -1
+``` 
+![linux_logo](Images/ls1.png)
+
+__Kullanabileceğiniz Diğer Parametreler__
+
+|Komut  |Açıklama |
+|-----------|---------|
+|`ls -r`  |📋 Ekran çıktısını ters liste şeklinde gösterir|
+|`ls -s`  |Dosya büyüklüğüne göre sıralar|
+|`ls -i`| __inode__ (düğüm) numarası ile sıralar|
+|`ls -lh`|Dosya boyutlarını daha okunaklı __(human readable)__ listeler|
+|`ls -lt`|Dosyaları üzerinde yapılan değişiklik __(modifikasyon)__ tarihine göre listeler|
