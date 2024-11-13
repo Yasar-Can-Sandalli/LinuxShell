@@ -129,7 +129,7 @@ uname -a
 ```
 ![linux_logo](Images/uname.png)
 
-|Parametre  |Açıklama |
+|Parametre  |Açıklama | 
 |-----------|---------|
 |`uname -n`  |Makinanın ağdaki adını gösterir|
 |`uname -r`|Çekirdek sürümünü gösterir.|
@@ -380,10 +380,42 @@ more /etc/passwd
 
 
 ## `tac`
-**Dosyayı Sondan başlayarak Yazma**
+**Dosyayı Sondan başlayarak Yazma** </br>
 Bir metin dosyasının içeriğini sondan başa doğru förmek için __tac__ komutu kullanılır
 
 ```shell
 cat hacker && tac hacker
 ```
 ![linux_logo](Images/tac.png)
+
+## `rev`
+**Satırı Ters Çevirerek Yazma** </br>
+İlginç bir komut olan rev komutu ile her satır ters çevrşlerek ekrana yansıtılır
+
+
+```shell
+rev hacker.txt
+```
+![linux_logo](Images/rev.png)
+
+## `sort`
+**Alfabetik Olarak Sıralama** </br>
+Metin dosyasini/belge çıktısını terminale yansıtmak için __sort__ komutu kullanılır. Eğer __sort -r__ şeklinde kullanılırsa ters alfabetik olarak yansıtılır
+
+```shell
+sort
+```
+
+```shell
+sort -r
+```
+![linux_logo](Images/sort.png)
+
+## `nl` 
+**Satır Numaralandırılması** </br>
+Bir dosyanın içeriğinde bulunan satırları numaranladırmak için __nl hacker__ kumutu kullanılır
+
+```shell
+nl
+```
+![linux_logo](Images/nl.png)
