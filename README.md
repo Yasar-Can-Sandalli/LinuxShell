@@ -1,6 +1,6 @@
 ![linux_logo](Images/linuxLogo.png)
 
-# 🐧 Linux Bash Ve Komutları ve Hızlı Başlangıç🚀
+# 🐧 Linux Bash Ve Komutlarına Hızlı Başlangıç🚀
 <p>Bu makale Linux işletim sisteminin temel shell komutlarını içermektedir. Dosya listeleme,Dizin değiştime,dosya işlemleri gibi  önemli kodların detaylı kullanımını anlatmaktadır</p>
 
 
@@ -153,3 +153,100 @@ cal
 cal 7 2001
 ```
 ![linux_logo](Images/cal1.png) </br>
+
+* `cal  2025` Belilrli bir yılla ilgili bir senelik takvimi görmek için de yandakine benzer bir komut kullanılabilir
+```shell
+cal 2025
+```
+![linux_logo](Images/cal2025.png) </br>
+
+## `date`
+**Saat ve Tarih Öğrenme** </br>
+Sistemin o anki saat ve tarih bilgisi öğrenmek için __date__ komutu kullanılır
+```shell
+date
+```
+![linux_logo](Images/date.png) </br>
+
+## `hostname`
+**Bilgisayarın Adını Öğrenme** </br>
+Kullandığınız sistemde bilgisayara verdiğimiz adıyani host adını görmek için __hostname__ komutunu kullanırız
+
+```shell
+hostname
+```
+![linux_logo](Images/hostname.png) </br>
+
+## `who-whoami`
+**Sistemde Kimin Login Olduğunu Öğrenme** </br>
+Sistemde kim aktif,kim login olmuş, o an hangi kimlike çalışıyoruz gibi bilgileri öğrenmek için __w, who, whoami, who am i__ komutlarını kullanabiliriz
+
+```shell
+w
+```
+```shell
+whoami
+```
+
+![linux_logo](Images/w.png) </br>
+
+**Bu komutlarda ufak nüans farklılıkları vardır Fakat Kısaca**
+
+|Komut  |Açıklama |
+|-----------|---------|
+|`w`  |Hangi kullanıcının o anda hangi uygulamayı/komutu çalıştırdığı bilgisi|
+|`who`  |Sistemde hangi kimlikle çalışıldığı|
+|`whoami`| Kullanıcın hangi kimlikle çalıştığını gösterir|
+
+![linux_logo](Images/whoo.png) </br>
+
+* `who  -b` who komutunun -b parametresi ile sestemin en son ne zaman açıldığı bilgisini görebiliriz
+
+```shell
+who -b
+```
+
+![linux_logo](Images/whob.png) </br>
+
+
+## `free`
+**Kullanilan Bellek Miktarını Öğrenme** </br>
+Bu komutla kullanilan bellek miktarı görülebilir __-m__ parametresiyle __free -m__ şeklinde kullanırsanız çıktı daha düzenli (MB) şeklinde olacaktır
+
+```shell
+free
+```
+```shell
+free -m
+```
+![linux_logo](Images/free.png) </br>
+
+## `vmstat`
+**Sistemin Genel Durumunu Öğrenme** </br>
+Sisteminizin genel durumunu görmek için __vmstat__ komutunu kullanabiliriz
+
+```shell
+vmstat
+```
+![linux_logo](Images/vmstat.png) </br>
+
+
+## `history`
+**Yazılan Geçmiş Kodları Görme** </br>
+Linux sistemlerinde kullanılan komutlar hafızada tutularak (Bu iş için ayrılan bir dosyaya belli sayıda yazılarak) daha sonrasında bu komutları tekarar görüntüleyebilirsiniz bu komutlar __.bash_history__ dosyasına kaydedilir. Daha yazılan bu komutlaru incelemek için __history__ komutunu kullanabilirsiniz. Bu komut .bash_history dosyasını referans alacaktır
+
+```shell
+history
+```
+![linux_logo](Images/history.png) </br> </br> 
+
+|Komut  |Açıklama |
+|-----------|---------|
+|`!215`  |Son yazılan 215.komutu (.bash_history dosyasında) tekrar çalıştırır|
+|`!!`  |En son yazılan komutu tekrar çalıştırır|
+|`!cat`| Daha önce yazılan cat komutunu gene aynı şekilde kullanarak tekrar çalıştırır|
+|`!history 5`|En son yazılan 5 komutu listeler|
+
+</br> 
+
+# Dizin Klasörler Arasında Gezme Ve İçeriğini Listeleme
