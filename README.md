@@ -249,7 +249,7 @@ history
 
 </br> 
 
-# 🗂️ Dizin Klasörler Arasında Gezme Ve İçeriğini Listeleme ⌚
+# 🗂️ Dizin Klasörler Arasında Gezme Ve İçerik Listeleme ⌚
 Dizinler arasında gezmek, içeriklerini listelemek, hangi dizinde çalıştığımızı görmek için kullandığımız komutlar vardır.
 Bu kısımda size bu komutlardan bahsedeceğim
 
@@ -419,3 +419,109 @@ Bir dosyanın içeriğinde bulunan satırları numaranladırmak için __nl hacke
 nl
 ```
 ![linux_logo](Images/nl.png)
+
+## `cmp`
+**Dosyalar Arası Karşılaştırma** </br>
+Dosyalar arasında karşılaştırmak için yapılan kullanılan bir diğer komutta __cmp__ koutudur. Örneğin __hacker.txt__ ve __test.txt__ adındaki iki dosyayı karşılaştırmak için __cmp hacker.txt test.txt__ kullanalım. Bu karşılaştırma sonucunda dosyaların farklarını, ilk farklılığın meydana geldiği satır ve byte numaraları şeklinde ekrana yansıtacaktır
+
+```shell
+cmp
+```
+
+```shell
+cmp hacker.txt test.txt
+```
+![linux_logo](Images/cmp.png)
+
+## `diff`
+**Dosyalar Arası Farklılar Karşılaştırma**
+Yine dosya karşılaştırmakta kullanılan bir komuttur. Eğer iki dosya arasında karşılaştırma yapılacaksa __diff__, üç dosya arasında karşılaştırma yapılacaksa __diff3__ kotu kullanılır.
+
+```shell
+diff
+```
+![linux_logo](Images/diff.png)
+
+```shell
+diff3 hacker.txt test.txt linuxshell
+```
+![linux_logo](Images/diff3.png)
+
+## `find`
+Zaman zaman adının yalnızca bir kısmını bildiğiniz ama bulunduğu dizini bir türlü hatırlayamadığınız dosyalar ve dizinler olacaktır. Bu dosyaları bulmak ve bunlarla ilgili çeşitli işlemler yapmak için __find__ komutu kullanılır Kullanın kalıbı __find [dosya_yolu] [aranacak_ifade]__ şeklindedir. Yani ilk önce hangi dizinde arama yapacaksak onu belirtiyoruz daha sonra da arama yapcağımnız ifadeyi __-name__ ile belirtiyoruz.
+Örneğin /__etc__ dizini altındaki __conf__ dosyalarını listelemek için __find /etc -name *.conf__ komutunu kullanabiliriz
+
+```shell
+find /etc -name *.conf
+```
+![linux_logo](Images/find.png)
+
+
+## 👇Dosya Taşıma-Kopyalama-Silme
+
+Linux sistemde dosyaları __kopyalamak__ve __taşımak__ için kullandığımız iki temel komut vardır. Bunlar __cp__ ve __mv__ komutlarıdır. Kopylama işlemi için cp, taşıma işlemi için de mv kullanılır. Bu bölümde tüm dosya taşıma, kopyalama, silme işlemlerinde bahsedilecektir
+
+## `cp`
+__Dosya Kopyalama__ </br>
+Kopyalama kotu olan __cp__ komutunun kullanımı __cp [kaynak] [hedef] şeklindedir__
+
+```shell
+cp [kaynak] [hedef]
+```
+
+![linux_logo](Images/cp.png)
+
+ * `cp -i` Eğer dikkatli biri olmadiğini düşünüyorsanız __cp__ komutunu __-i__ parametresi ile birlikte kullanabilirsiniz. Bu parametre hedef dizinde aynı doya varsa üzerine yazmadan önce sizlere uyarı mesahı verir (__interactive__). Onay verirseniz üstene yazarak kopyalar
+
+```shell
+cp -i
+```
+![linux_logo](Images/cpi.png)
+
+## `mv`
+**Dosya Taşıma** </br>
+Dosya taşımak için __mv__ komutu kullanılır. Komutun kullanımı cp komutunun kullanım şekli ile aynıdır
+
+```shell
+mv [kaynak] [hedef]
+```
+![linux_logo](Images/mv.png)
+
+## `rm`
+**Dosya ve Dizin Silme** </br>
+Dosya dizin silme işlemlerinde kullanılan komut __rm__ komutudur. Bu komutla tek bir dosya silebileceğimiz gibi çok sayıda dosyayıda bir seferde silebiliriz
+
+```shell
+rm
+```
+![linux_logo](Images/rm.png) </br></br>
+
+# 📁 Dizin Oluşturma ve Silme
+<p>Dizin oluşturma ve silme işlemleri için iki komut kullanılır. Bunlar <strong>mkdir</strong> ve <strong>rm</strong> komutlarıdır</p>
+
+## `mkdir`
+**Dizin Oluşturma** </br>
+En basit haliyle örneğin __deneme1__ adında bir dizin oluşturmak için __mkdir deneme1__ komutunu kullanabiliriz
+
+```shell
+mkdir
+```
+```shell
+mkdir deneme1
+```
+
+![linux_logo](Images/mkdir.png)
+
+- 🗂️ Birden fazla dizin olıuşturmak için aşağıdaki gibi dizinleri peş peşe sıralayabilirsiniz
+
+```shell
+mkdir deneme2 deneme3
+```
+![linux_logo](Images/mkdirMany.png)
+
+- `mkdir -p` parametresi bir dizin oluşturulurken alt dizinlerinide oluşturmamızı sağlar
+
+```shell
+mkdir -p
+```
+![linux_logo](Images/mkdirP.png)
