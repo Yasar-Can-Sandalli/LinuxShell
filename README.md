@@ -525,3 +525,45 @@ mkdir deneme2 deneme3
 mkdir -p
 ```
 ![linux_logo](Images/mkdirP.png)
+
+## `rm` 
+**Dizin Silme İşlemleri**</br>
+Linux'ta rm komutu, dosya ve dizinleri sistemden kalıcı olarak kaldırmak için kullanılan bir silme komutudur. Birden fazla alabildiği parametreler ile çeşitli silme işlemleri yapılabildiği gibi bu bu kaldırma işlemlerin geri alınamaz olduğuda bilinmelidir
+
+```shell
+rm
+```
+![linux_logo](Images/rmFileNow.png)
+
+- `rm` kontunun aldığı parametreler ve işlevleri aşağıdaki tabloda detaylı anlatılmıştır
+
+|Komut  |Açıklama |
+|-----------|---------|
+|`rm -i`  | __-i :__  Silme işlemi için kullanıcıya her dosya için onay sorar. Bu, yanlışlıkla dosya silme riskini azaltır.|
+|`rm -f`  | __-f :__  Zorla (force) silme işlemi yapar. Dosya kullanıcı tarafından yazılabilir olmasa bile onay istemeden siler. Kullanıcıdan onay alınmadan silme işlemi yapılır.|
+|`rm -r`| __-r :__ veya -R: Dizinleri ve altındaki tüm dosya ve alt dizinleri (recursive olarak) siler. Dizini tamamen kaldırmak için bu parametre kullanılır.|
+|`rm -rf`|Bu komut,  /dizin_adi dizinini ve içindeki tüm dosya ve alt dizinleri, silme izni sormadan kalıcı olarak siler. Bu yüzden çok tehlikelidir ve dikkatli kullanılması gerekir|
+
+</br>
+</br>
+
+__Not:__ Bu parametreler kendi başlarına kullanıldığı gibi birliktede kullanılabilmektedir rm -rf gibi lankin  -r -f parametreleri birlikte kullanıldıklarında geri dönülemez silme işlemleri yaptığı için kullanılırken ayriyetten dikkatli olunmalıdı. Bu parametlerin birlikte kullanılmasını dair bir kaç örnek
+
+![linux_logo](Images/rmrf.png) 
+![linux_logo](Images/rmr.png) 🔓
+![linux_logo](Images/rmri.png) 
+
+</br>
+</br>
+</br>
+
+# 🔐 Dosya ve Dizinlere Erişim Yetkileri 
+Linux'ta dosya ve dizinlerle ilgili güçlü bir __güvenlik__ sistemi vardır. Bu güvenlik sisteminin en önemli unsuru da kullanıcıların hangi dosya ya da dizinde hangi yetkilere sahip olacaklarının iyi belirlenmesidir. Bi- lindiği gibi sistemdeki en yetkili kullanıcı __root__ kullanıcıdır ve bu kul lanıcı için herhangi bir kısıtlama yoktur. Bu sebeple eğer sistemde root kullanıcı haklarıyla çalışıyorsanız yapacağınız işlemlere dikkat etme- niz faydanıza olacaktır.
+ 
+
+
+## Erişim Yetkileri
+
+Sistemde bulunan her kullanıcı, kendisine verilen yetkiler çerçevesin- de işlemler yapabilir. Kullanıcılar bir dosya ya da dizinle ilgili üç fark- lı eylemde bulunabilirler:
+
+* okuma (r): Dosya içeriğini görebilir mi? (Klasörler için) Dosya listesini alabilir mi?
