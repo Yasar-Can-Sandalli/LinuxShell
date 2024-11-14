@@ -611,4 +611,34 @@ Birkaç örnek kullanıma bakalım : 📆
     chmod u + rwx <dosya_ismi> (Dosyanın sahibine tüm yetkileri vermek)
     chmod o - wx <dosya_ismi> (Diğer kullanıcıların tüm okuma ve yazma haklarını kaldırmak)
     chmod o - wx <dosya_ismi> (Diğer kullanıcıların tüm okuma ve yazma haklarını kaldırmak)
+    chmod u + rwx,g + r, o + r <dosya_ismi> (Dosya sahibine tüm hakları, gruba okuma, diğer kullanıcılarada okuma yetkisi vermek)
+    chmod go - rwx <dosya_ismi> (Grup ve diğerlerinde rwx yetkilerini kaldırmak)
+    chmod - x <dosya_ismi> (Herkese çalıştırma izni vermek)
 
+Basit bir örnekle izinlerin nasıl dfeğiştirildiğini görelim. Elimizde __user.txr__ adında bir dosyamız olsun. Bu dosyanın izinlerine __ls -l user.txt__ ile bakalım
+
+```shell
+ls -l user.txt
+```
+![linux_logo](Images/usertxt.png)
+
+## 🔒 `chmod`
+
+İzin durumu __-rw-r--r--__ olarak görünüyor. Başraki - işareti daha öncede bahsettiğimiz gibi bunun bir dosya olduğunu gösterir. Eğer __d__ harfi olsaydı bir dizin ya da klasör (directory) olduğunu anlayacaktık. Bu izin durumuna göre, dosya sahinin okuma ve yazma yetkisi var. Diğer tüm kullanıcıların ise sadece okuma izni var. Örneğin grup ve diğer kullanıcılara da __yazma__ hakkı vermek istersek __chmod go+w user.txt__ komutunu kullanmamız gereklidir.
+
+```shell
+chmod go+w user.txt
+```
+![linux_logo](Images/chmodd.png)
+
+Örneğin grubtakilerin okuma iznini kaldırmak ve diğer kullanıcıların da yazam yetkisini kaldırmak için __chmod g-r,o-w user.txt__ komutunu kullanmamız yeterli olacakktır
+
+```shell
+chmod g-r,o-w user.txt
+```
+![linux_logo](Images/chmoddd.png)
+
+# 🛈 Kaynakça
+Bu makalenin içeriğinde Abaküs Yayınlarından __Kemal Demirez__ 'in yazdığı __Linux Komut Satırı__ adlı kitabından faydalanılmıştır. Kendsine yazdığı bu kitap için Teşekkürlerimi İletiyorum 🙏
+
+![linux_logo](Images/kitap.jpg)
