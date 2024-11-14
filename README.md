@@ -566,4 +566,49 @@ Linux'ta dosya ve dizinlerle ilgili güçlü bir __güvenlik__ sistemi vardır. 
 
 Sistemde bulunan her kullanıcı, kendisine verilen yetkiler çerçevesin- de işlemler yapabilir. Kullanıcılar bir dosya ya da dizinle ilgili üç fark- lı eylemde bulunabilirler:
 
-* okuma (r): Dosya içeriğini görebilir mi? (Klasörler için) Dosya listesini alabilir mi?
+* __okuma (r):__ Dosya içeriğini görebilir mi? (Klasörler için) Dosya listesini alabilir mi ?
+* __yazma (w):__ Dosyaya yazma ve ayni zamanda dosyayi silme izni.(Klasörler için) Bu klasörler dosya veya alt klasör oluşturulabilir mi ?
+
+* __çalıştırma (x):__ Dosyayı çalıştırabilir mi ? (Klasörler için) Bu klasöre geçebilir mi ? 
+
+Şimdi bulunduğumuz dizinin içeriğini listelemek için __ls -l__ komutunu kullanalım ve listelenen alt dizin ve dizin ve dosyalarla ilgili izin durumlarına bakalım 
+
+![linux_logo](Images/ls=l.png) 
+
+Listeyi inceledeğimizde __drwxr-xr-x__ ifadesini görüyorsunuz. bu kmodlama ifadeleri, listelenen dosya/dizinlerin kullanıcılar için geçerli erişim yetkilerini gösteren ifadelerdir. İfadenin başında gördüğünüz __d__ harfi bunun bir dizin (directory) olduğunu gösterir eğer başında __-__ işareti olsaydı bununda bir dosya olduğunu bize anlatırdı geriye kalan ve __9__ karakterden oluşan __rwxr-xr-x__ kodlamasını üçerli gruplara ayıralım Yani; </br> </br>
+
+Birinci üçlü gurup (rwx) dosya/dizin __sahibinin__ yetkilerini, ikinci grup (r-x) __dosyanın sahibiyle aynı grupta__ bulunan kullanıcıların yetkilerini, üçüncü grup (r-x) ise __diğer__ (genel) kullanıcıların yetkilerini ifade eder.
+
+- `r` : okuma yetkisi (__read__)
+- `w` : okuma yetkisi (__write__)
+- `x` : okuma yetkisi (__execute__)
+
+Şimdi rwxr-xr-x ifadesine tekrar bakalım. Önce ifadeyi rwx r-x r-x şeklinde üç grupta düşünelim 
+
+__rwx :__ Dosyanın sahibinin okuma, yazma ve çalıştırma yetkileri var
+
+__r-x :__ Dosyanın sahibiyle aynı  grupta bulunan kullanıcıların okuma ve çalıştırma yetkileri var
+
+__r-x :__ Diğer kullanıcıların okuma ve çalıştırma yetkileri var🌐 📄
+
+## 📑 Erişim Yetkilerinin Değiştirilmesi
+Bir dosya ya da dizinin erişim yetkilerininm değiştirilme işlemi sadece __root__ kullanıcı tarafından yapılabilir. Erişim yetkilerinin değiştirilmesi için __chmod__ (change mod) komutu kullanılır. Bu komutun kullanım kalıbı şöyledir : __chmod <ugoa> <+=-> <rwxst> <dosya_dizin>__
+
+- `u` : Dosya ya da dizin sahibi (user)
+- `g` : Dosya ya da dizin sahibiyle aynı grupta bulunan kullanıcılar (group)
+- `o` : Diğer kullanıcılar (others)
+- `a` : Herkes (all)
+- `+` : Yetki ekleme
+- `-` : Yetki çıkarma
+- `=` : Yetki eşitleme
+- `r` : Okuma yetkisi
+- `w` : Yazma yetkisi
+- `x` : Çalıştırma yetkisi
+
+Birkaç örnek kullanıma bakalım :
+
+    chmod + r <dosya_ismi> (Herkese okuma izni vermek)
+    chmod u + rwx <dosya_ismi> (Dosyanın sahibine tüm yetkileri vermek)
+    chmod o - wx <dosya_ismi> (Diğer kullanıcıların tüm okuma ve yazma haklarını kaldırmak)
+    chmod o - wx <dosya_ismi> (Diğer kullanıcıların tüm okuma ve yazma haklarını kaldırmak)
+
