@@ -605,7 +605,7 @@ Bir dosya ya da dizinin erişim yetkilerininm değiştirilme işlemi sadece __ro
 - `w` : Yazma yetkisi
 - `x` : Çalıştırma yetkisi
 
-Birkaç örnek kullanıma bakalım :
+Birkaç örnek kullanıma bakalım : 📆
 
     chmod + r <dosya_ismi> (Herkese okuma izni vermek)
     chmod u + rwx <dosya_ismi> (Dosyanın sahibine tüm yetkileri vermek)
